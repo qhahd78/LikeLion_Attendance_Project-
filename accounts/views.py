@@ -4,7 +4,8 @@ from django.contrib import auth
 from django.http import HttpResponseRedirect
 # Create your views here.
 
-def login (request) :
+
+def login(request):
     if request.method == "POST":
         username = request.POST['teacherid']
         password = request.POST['password']
@@ -13,10 +14,12 @@ def login (request) :
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request, 'login.html',{'error': '비밀번호가 틀렸어요'})
-    else: return render(request, 'login.html')
+            return render(request, 'login.html', {'error': '비밀번호가 틀렸어요'})
+    else:
+        return render(request, 'login.html')
 
-def signup (request) :
+
+def signup(request):
     if request.method == "POST":
         if request.POST["password"] == request.POST["password2"]:
             user = User.objects.create_user(
@@ -24,9 +27,13 @@ def signup (request) :
             auth.login(request, user)
             return redirect('login')
         return render(request, 'signup.html')
-            
+
     return render(request, 'signup.html')
 
-    def logout(request): 
+    def logout(request):
         auth.logout(request)
         return redirect('login')
+
+
+def mypage(request):
+    return render(request, 'mypage.html')

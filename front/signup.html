@@ -1,17 +1,14 @@
-{% load static%}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="signup.css">
     <title>Document</title>
 </head>
 <body>
-    <form method="POST"action="{%url 'signup' %}">
-        {% csrf_token %}
+    <form method="POST"action="{%url 'signup'%}">
         <div class="signup-div">
             <p>회원가입</p>
             <input name="teacherid" type="text" placeholder="아이디를 입력하세요">

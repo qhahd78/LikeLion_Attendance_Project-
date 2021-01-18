@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.signup-div p {
+    font-family: 'GmarketSansMedium';
+    font-size: 45px;
+    margin-bottom: 5vh;
+}
+
+.signup-div input {
+    font-family: 'GmarketSansLight';
+    font-size: 20px;
+    display: block;
+    margin: 20px 0;
+    padding: 5px;
+    width: 400px;
+    height: 40px;
+    border-style: none;
+    border-bottom: 1px solid black;
+}
+
+.signup-div input:focus {
+    outline: none !important;
+    border-bottom: 1px solid #FF9E1B;
+}
+
+.signup-div button {
+    font-family: 'GmarketSansLight';
+    font-size: 23px;
+    width: 400px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    margin-top: 2vh;
+}
+
+.signup-div button:hover {
+    background-color: #FF9E1B;
+    transition: .2s;
+}
