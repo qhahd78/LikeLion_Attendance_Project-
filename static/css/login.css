@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 전체 레이아웃  */
+body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 로그인 구성요소 div */
+.login-div {
+    background-color: white;
+    width: 650px;
+    height: 280px;
+    /* border: 1px solid black; */
+}
+
+/* 타이틀 */
+.login-div p:nth-of-type(1) {
+    font-family: 'GmarketSansMedium';
+    font-size: 46px;
+    padding-bottom: 30px;
+}
+
+
+/* input 스타일 */
+.login-div input {
+    font-family: 'GmarketSansLight';
+    font-size: 20px;
+    padding: 5px;
+    width: 245px;
+    height: 50px;
+    color: black;
+    border-style: none;
+    border-bottom: 1px solid rgb(139, 139, 139);
+    margin-right: 20px;
+}
+
+.login-div input:focus {
+    outline: none;
+}
+
+/* 로그인 버튼 */
+.login-div button {
+    font-family: 'GmarketSansMedium';
+    font-size: 18px;
+    background-color: #FF9E1B;
+    color: white;
+    width: 88px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.login-div button:focus {
+    outline: none;
+}
+
+.login-div button:hover {
+    background-color: black;
+    transition: .3s;
+}
+
+/* 회원가입 글씨 */
+.login-div a span {
+    font-family: 'GmarketSansLight';
+    float: left;
+    color: rgba(100, 100, 100, 0.247);
+    font-size: 18px;
+    margin: 8px 0 0 15px;
+}
+
+.login-div a span:hover {
+    font-family: 'GmarketSansMedium';
+    color: #FF9E1B;
+    /* border-bottom: 1px solid #FF9E1B; */
+    transition: .2s;
+}
