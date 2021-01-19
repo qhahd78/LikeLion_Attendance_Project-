@@ -1,9 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Session_form
+
 
 # Create your views here.
 
 def createsession (request) :
-    return render(request, 'createSession.html')
+    
+    if request.method == 'POST': 
+        session_form = Session_form()
+        session_form.session_date = request.POST.get('session_date')
+        session_form.title = request.POST.get('title')
+        session_form.save()
+
+        return redirect('sessionlist')
+        
+
+    return render(request, 'createsession.html')
 
 def sessionlist (request) :
-    return render(request, 'sessionList.html')
+    Sessions = Session_form.objects 
+
+    return render(request, 'sessionList.html', {'sessions': Sessions } )

@@ -7,10 +7,13 @@
 </head>
 <body>
     <div>
-        <p>세션 등록</p>
-        <input type = "date">
-        <input type="text" maxlength="20">
-        <button type="submit" action="main.html">등록</button>
+        <form method="POST" action="{% url 'createsession' %}">
+            {% csrf_token %}
+            <p>세션 등록</p>
+            <input name="session_date" type="date">
+            <input name="title" type="text" maxlength="20">
+            <button type="submit">등록</button>
+        </form>
     </div>
     
 </body>

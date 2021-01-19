@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main.views.home, name='home'),
-    path('login/', accounts.views.login, name='login'),
+    path('home/', main.views.home, name='home'),
+    path('', accounts.views.login, name='login'),
     # path('signup/', accounts.views.signup, name='signup'),
     path('mypage/', accounts.views.mypage, name='mypage'),
     path('create_session/', session.views.createsession, name='createsession'),

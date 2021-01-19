@@ -9,15 +9,14 @@
     <div>
         <p>현재 등록된 세션 목록</p>
         <div>
+            {% for session in sessions.all %}
             <a href="#">
-                <p>2021. 01. 19</p>
+                <p>{{session.title}}</p>
             </a>
-            <a href="#">
-                <p>2021. 01. 19</p>
-            </a>
-            <a href="#" onclick="javascript:void(window.open('{% url 'createsession' %}','new','width=500 height=500 top=150 left=500'))">
-                <p>세션 추가</p>
-            </a>
+            {% endfor %}
+            <button onclick="javascript:void(window.open('{% url 'createsession' %}','new','width=500 height=500 top=150 left=500'))">
+                추가</button>
+            
         </div>
     </div>
     

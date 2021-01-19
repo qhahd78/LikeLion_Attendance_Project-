@@ -12,13 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Student',
+            name='Session_form',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=5)),
-                ('phone_num', models.CharField(max_length=11)),
-                ('major', models.CharField(max_length=15)),
-                ('profile', models.ImageField(default=None, upload_to='image')),
+                ('session_date', models.DateField(auto_now_add=True, null=True)),
+                ('title', models.CharField(max_length=20, null=True)),
             ],
         ),
     ]
