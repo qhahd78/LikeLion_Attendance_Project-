@@ -95,6 +95,7 @@ main::before {
 .cards::-webkit-scrollbar {
     background-color: white;
     width: 20px;
+
 }
 
 .cards::-webkit-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -115,6 +116,7 @@ main::before {
     margin-top: 4vh;
     border-radius: 10px;
     box-shadow: 2px 2px 3px 3px #e4e4e4;
+    position: relative;
 }
 
 /* 출석 결석 이런 거  */
@@ -132,11 +134,11 @@ main::before {
 .student {
     display: inline-block;
     width: 300px;
-    box-shadow: 2px 2px 3px 3px #e4e4e4;
+    box-shadow: 2px 2px 3px 3px #d8d8d8;
     border-radius: 5px;
     margin: 10px;
     text-align: center;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .student:hover {

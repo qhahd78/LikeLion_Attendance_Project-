@@ -38,11 +38,13 @@
                 </div>
                 {%for student in students.all%}
                 <div class="card">
-                    <p class="student card-header">
-                        <img src="{{student.profile.url}}" height="100px" width = "100px" id="profile-img">
-                        <span>{{student.name}}</span>
-                        <span>{{student.major}}</span>
-                    </p>
+                    <div class="student card-header">
+                        <img src="{{student.profile.url}}" height="70px" width = "70px" class="student-img">
+                        <p class="student-info">
+                            <span>{{student.name}}</span><br>
+                            <span>{{student.major}}</span>
+                        </p>
+                    </div>
                 </div>
                 {%endfor%}
             </div>
