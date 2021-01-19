@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import main.views
 import accounts.views
+import session.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,7 +26,9 @@ urlpatterns = [
     path('', main.views.home, name='home'),
     path('login/', accounts.views.login, name='login'),
     # path('signup/', accounts.views.signup, name='signup'),
-    path('mypage/', accounts.views.mypage, name='mypage')
+    path('mypage/', accounts.views.mypage, name='mypage'),
+    path('create_session/', session.views.createsession, name='createsession'),
+    path('session_list', session.views.sessionlist, name='sessionlist')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
