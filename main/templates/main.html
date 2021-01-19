@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'css/main.css'%}">
-    <title>Document</title>
+    <title>MAIN</title>
 </head>
 <body>
         <header>
@@ -31,60 +31,37 @@
 <main>
     <form method="POST" action="#">
         <div class="card-list">
-            <div class="card">
-                <button>전체</button>
-                {%for student in students.all%}
-                <p class="student">
-                    <img src="{% static 'images/profile.jpg'%}" height="100px" width = "100px" id="profile-img">
-                    <span>{{student.name}}</span>
-                    <span>{{student.major}}</span>
-                </p>
-                {%endfor%}
-                <!-- <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>{{students.name}}</span>
-                    <span>{{students.major}}</span>
 
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p>
-                <p class="student">
-                    <img src="profile.jpg" height="100px" width = "100px" id="profile-img">
-                    <span>하유민</span>
-                    <span>의용메카</span>
-                </p> -->
+            <div class="cards column">
+                <div class="no-move">
+                    <button>전체</button>
+                </div>
+                {%for student in students.all%}
+                <div class="card">
+                    <p class="student card-header">
+                        <img src="{{student.profile.url}}" height="100px" width = "100px" id="profile-img">
+                        <span>{{student.name}}</span>
+                        <span>{{student.major}}</span>
+                    </p>
+                </div>
+                {%endfor%}
             </div>
-            <div class="card">
-                <button>출석</button>
+            <div class="cards column">
+                <div class="no-move">
+                    <button>출석</button>
+                </div>
             </div>
-            <div class="card">
-                <button>지각</button>
+
+            <div class="cards column ">
+                <div class="no-move">
+                    <button>지각</button>
+                </div>
             </div>
-            <div class="card">
-                <button>결석</button>
+            
+            <div class="cards column ">
+                <div class="no-move">
+                    <button>결석</button>
+                </div>
             </div>
         </div>
         <div class="submit-div">
@@ -96,4 +73,27 @@
 
     
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- 부트스트랩 4.x를 사용한다. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+
+$(function() {
+$(".column").sortable({
+// 드래그 앤 드롭 단위 css 선택자
+connectWith: ".column",
+// 움직이는 css 선택자
+handle: ".card-header",
+// 움직이지 못하는 css 선택자
+cancel: ".no-move",
+// 이동하려는 location에 추가 되는 클래스
+placeholder: "card-placeholder"
+});
+// 해당 클래스 하위의 텍스트 드래그를 막는다.
+$( ".column .card" ).disableSelection();
+});
+</script>
+
 </html>

@@ -69,6 +69,7 @@ header ul li:nth-of-type(3) span {
 /*  --------------베이스 커트라인------------------ */
 
 
+
 /* hackyourlife 배경 설정  */
 main::before {
     content: "";
@@ -91,12 +92,12 @@ main::before {
 }
 
 /* 4장 각각의 카드  */
-.card::-webkit-scrollbar {
+.cards::-webkit-scrollbar {
     background-color: white;
     width: 20px;
 }
 
-.card::-webkit-scrollbar-thumb:hover {
+.cards::-webkit-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgba(78, 78, 78, 0.322);
     border-radius: 10px;
     border: 6px solid transparent;
@@ -104,7 +105,8 @@ main::before {
     transition: .8s;
 }
 
-.card {
+.cards {
+    overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
     width: 350px;
@@ -118,7 +120,7 @@ main::before {
 /* 출석 결석 이런 거  */
 
 
-.card button {
+.cards button {
     font-family: 'GmarketSansMedium';
     font-size: 25px;
     background-color: rgba(255, 255, 255, 0);
@@ -134,10 +136,10 @@ main::before {
     border-radius: 5px;
     margin: 10px;
     text-align: center;
+    z-index: 1;
 }
 
 .student:hover {
-    cursor: move;
     transition: .2s;
     transform: translate(-2px, -2px);
 
@@ -165,4 +167,21 @@ main::before {
 #submit:hover {
 
     /* 제출버튼누르면 어떤 효과 나오게 할지 ...  */
+}
+
+.card-placeholder {
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f3f3f36c;
+    border: 1px solid #f3f3f36e;
+    border-radius: 10px;
+    transition: .8s;
+    /* box-shadow: 2px 2px 3px 3px #ececec; */
+}
+
+/* 마우스 포인터을 손가락으로 변경 */
+.card:not(.no-move) .card-header {
+    cursor: pointer;
 }

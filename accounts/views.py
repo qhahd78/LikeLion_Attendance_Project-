@@ -19,18 +19,7 @@ def login(request):
         return render(request, 'login.html')
 
 
-def signup(request):
-    if request.method == "POST":
-        if request.POST["password"] == request.POST["password2"]:
-            user = User.objects.create_user(
-                username=request.POST["teacherid"], password=request.POST["password"])
-            auth.login(request, user)
-            return redirect('login')
-        return render(request, 'signup.html')
-
-    return render(request, 'signup.html')
-
-    def logout(request):
+def logout(request):
         auth.logout(request)
         return redirect('login')
 
