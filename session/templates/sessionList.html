@@ -1,23 +1,34 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css'%}">
+    <link rel="stylesheet" href="{% static 'css/sessionList.css' %}">
     <title>SessionList</title>
 </head>
 <body>
-    <div>
-        <p>현재 등록된 세션 목록</p>
-        <div>
+    <div class="sessionlist-div">
+        <p  class="session-title">현재 등록된 세션 목록</p>
+        
+        <div class="session-list">
+
             {% for session in sessions.all %}
-            <a href="#">
-                <p>{{session.title}}</p>
-            </a>
+            <p>
+                <span class="session-date">{{session.session_date|date:'Y-m-d'}}</span> 
+                <a href="#">
+                    <span  class="session-name">{{session.title}}</span><br>
+                </a>
+            </p>
+
             {% endfor %}
-            <button onclick="javascript:void(window.open('{% url 'createsession' %}','new','width=500 height=500 top=150 left=500'))">
-                추가</button>
+            
             
         </div>
+        <button onclick="javascript:void(window.open('{% url 'createsession' %}','new','width=700 height=500 top=150 left=400'))">
+            세션추가</button>
     </div>
     
 </body>

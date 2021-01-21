@@ -1,17 +1,21 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/reset'%}">
+    <link rel="stylesheet" href="{% static 'css/createSession.css'%}">
+    <title>세션 등록</title>
 </head>
 <body>
     <div>
         <form method="POST" action="{% url 'createsession' %}">
             {% csrf_token %}
             <p>세션 등록</p>
-            <input name="session_date" type="date">
-            <input name="title" type="text" maxlength="20">
+            <input id="session-date" name="session_date" type="date">
+            <input id="session-name" name="title" type="text" placeholder="세션명을 입력하세요." maxlength="20">
             <button type="submit">등록</button>
         </form>
     </div>

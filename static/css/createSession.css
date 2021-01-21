@@ -20,50 +20,55 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 400px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.session-title {
+div p {
     font-family: 'GmarketSansMedium';
-    font-size: 46px;
-    padding-bottom: 30px;
+    font-size: 35px;
+    margin-bottom: 5vh;
 }
 
-
-.session-list {
-    margin-bottom: 2vh;
-}
-
-.session-list p {
-    border-bottom: 1px solid black;
-    padding: 10px 0;
-}
-
-.session-date {
+#session-date {
     font-family: 'GmarketSansLight';
+    border-style: none;
     font-size: 25px;
-    float: left;
-    padding-top: 8px;
+    margin-right: 3vh;
 }
 
-.session-name {
-    font-family: 'GmarketSansMedium';
-    font-size: 28px;
+#session-name {
+    font-size: 20px;
+    width: 250px;
+    font-family: 'GmarketSansLight';
+    border-style: none;
+    border-bottom: 1px solid black;
+    margin-right: 10px;
 }
 
 button {
     font-family: 'GmarketSansLight';
     font-size: 20px;
+    border-color: white;
+    border-right: white;
+    border-bottom: white;
     border-radius: 8px;
-    padding: 5px;
+    padding: 7px 5px 5px 5px;
     background-color: #FF9E1B;
     color: white;
+    width: 60px;
 }
 
 button:hover {
+    cursor: pointer;
+    border-color: black;
     background-color: black;
     transition: .3s;
+}
+
+input:focus {
+    outline: none;
 }

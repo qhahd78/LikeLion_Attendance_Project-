@@ -19,7 +19,23 @@
     font-style: normal;
 }
 
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF9E1B;
+}
+
+
 body {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,39 +44,58 @@ body {
 
 .session-title {
     font-family: 'GmarketSansMedium';
-    font-size: 46px;
+    font-size: 35px;
     padding-bottom: 30px;
 }
 
-
 .session-list {
-    margin-bottom: 2vh;
+    overflow-y: auto;
+    height: 250px;
 }
 
+.session-list::-webkit-scrollbar {
+    background-color: white;
+    width: 20px;
+
+}
+
+.session-list::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(37, 37, 37, 0.096);
+    border-radius: 10px;
+    border: 7px solid transparent;
+    background-clip: padding-box;
+    transition: .8s;
+}
+
+
+
 .session-list p {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(179, 179, 179);
     padding: 10px 0;
+    width: 400px;
 }
 
 .session-date {
     font-family: 'GmarketSansLight';
-    font-size: 25px;
+    font-size: 16px;
     float: left;
-    padding-top: 8px;
+    padding-top: 5px;
 }
 
 .session-name {
     font-family: 'GmarketSansMedium';
-    font-size: 28px;
+    font-size: 18px;
 }
 
 button {
+    float: left;
     font-family: 'GmarketSansLight';
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 8px;
     padding: 5px;
     background-color: #FF9E1B;
     color: white;
+    margin-top: 3vh;
 }
 
 button:hover {

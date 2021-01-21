@@ -33,10 +33,7 @@ ul {
     margin-left: 4vh;
 }
 
-.profile-li {
-    display: flex;
-    align-items: center;
-}
+
 
 /* 프로필 이미지 */
 #profile-img {
@@ -46,19 +43,29 @@ ul {
     height: 75px;
 }
 
-/* 날짜 input */
+/* 날짜 */
 ul li:nth-of-type(2) span {
     font-size: 25px;
     font-family: 'GmarketSansLight';
     color: white;
 }
 
+ul li:nth-of-type(2) span:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+
 
 /* 프로필 글씨  */
 header ul li:nth-of-type(3) span {
     font-family: 'GmarketSansLight';
-    font-size: 20px;
+    font-size: 25px;
+    padding-right: 25px;
     color: white;
+}
+
+header ul li:nth-of-type(3) span:hover {
+    cursor: pointer;
 }
 
 /*  --------------베이스 커트라인------------------ */
@@ -86,24 +93,29 @@ main::before {
     justify-content: space-around;
 }
 
+
 /* 4장 각각의 카드  */
 .cards::-webkit-scrollbar {
     background-color: white;
     width: 20px;
+
 }
 
-.cards::-webkit-scrollbar::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(78, 78, 78, 0.322);
+.cards::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(37, 37, 37, 0.322);
     border-radius: 10px;
-    border: 6px solid transparent;
+    border: 7px solid transparent;
     background-clip: padding-box;
     transition: .8s;
 }
 
+
+
 .cards {
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: relative;
+    padding-left: 13px;
     width: 350px;
     height: 580px;
     text-align: center;
@@ -187,14 +199,13 @@ main::before {
 
 .card-placeholder {
     width: 300px;
-    /* height: 200px; */
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     background-color: #f3f3f36c;
-    border: 1px solid #f3f3f36e;
     border-radius: 10px;
     transition: .8s;
-    /* box-shadow: 2px 2px 3px 3px #ececec; */
+
 }
 
 /* 마우스 포인터을 손가락으로 변경 */

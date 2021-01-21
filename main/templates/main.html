@@ -18,14 +18,14 @@
                     </a>
                 </li> 
                 <li>
-                    <a href="#" onclick="javascript:void(window.open('{% url 'sessionlist' %}','new','width=500 height=500 top=150 left=500'))">
+                    <a onclick="javascript:void(window.open('{% url 'sessionlist' %}','new','width=700 height=500 top=150 left=400'))">
                         <span  id="date-text"></span>
                     </a>
                 </li>
                 <li class="profile-li">
-                    <span>{{user.username}}</span>
-                    <img src="{% static 'images/profile.jpg'%}" height="100px" width = "100px" id="profile-img">
-                    
+                    <a onclick="javascript:void(window.open('{% url 'mypage' %}','new','width=500 height=500 top=150 left=500'))">>
+                        <span>{{user.username}}</span>
+                    </a>
                 </li>  
             </ul>
         </header>

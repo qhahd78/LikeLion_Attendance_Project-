@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="sessionList.css">
+ 
     <title>SessionList</title>
 </head>
 <body>
-    <div>
-        <p>현재 등록된 세션 목록</p>
-        <div>
-            <a href="#">
-                <p>2021. 01. 19</p>
-            </a>
-            <a href="#">
-                <p>2021. 01. 19</p>
-            </a>
-            <a href="#">
-                <p>세션 추가</p>
-            </a>
+    <div class="sessionlist-div">
+        <p class="session-title">현재 등록된 세션 목록</p>
+        
+        <div class="session-list">
+            <p>
+                <span class="session-date">2021.01.11</span> 
+                <a href="#">
+                    <span class="session-name">세션 타이틀</span>
+                </a>
+            </p>
+
+            <p>
+                <span class="session-date">2021.01.11</span> 
+                <a href="#">
+                    <span class="session-name">세션 타이틀</span>
+                </a>
+            </p>
+
+            
         </div>
+
+        <button onclick="javascript:void(window.open('createsession.html','new','width=500 height=500 top=150 left=500'))">
+            세션 추가</button>
     </div>
     
 </body>
