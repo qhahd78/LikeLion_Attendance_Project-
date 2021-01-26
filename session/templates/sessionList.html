@@ -17,10 +17,22 @@
 
             {% for session in sessions.all %}
             <p>
-                <span class="session-date">{{session.session_date|date:'Y-m-d'}}</span> 
-                <a href="#">
-                    <span  class="session-name">{{session.title}}</span><br>
-                </a>
+                <span onclick="javascript:
+                    function a() {
+                        window.close(); 
+                        window.location.href('{% url 'home' %}');
+                    };
+                        
+                    return a();" 
+                    class="session-date">{{session.session_date|date:'Y-m-d'}}</span> 
+                <span onclick="javascript:
+                function a() {
+                    window.close(); 
+                    window.location.href('{% url 'home' %}');
+                };
+                    
+                return a();" 
+                class="session-name">{{session.title}}</span><br>
             </p>
 
             {% endfor %}
@@ -32,4 +44,5 @@
     </div>
     
 </body>
+<script src="{% static 'js/sessionList.js' %}"></script>
 </html>

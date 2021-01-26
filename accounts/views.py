@@ -24,6 +24,6 @@ def logout(request):
         auth.logout(request)
         return redirect('login')
 
-@login_required
+@login_required(login_url='login')
 def mypage(request):
     return render(request, 'mypage.html')

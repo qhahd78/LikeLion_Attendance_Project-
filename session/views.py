@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Session_form
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required(login_url='login')
 def createsession (request) :
     
     if request.method == 'POST': 
@@ -17,6 +18,7 @@ def createsession (request) :
 
     return render(request, 'createsession.html')
 
+@login_required(login_url='login')
 def sessionlist (request) :
     Sessions = Session_form.objects 
 

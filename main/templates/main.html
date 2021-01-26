@@ -99,6 +99,10 @@ placeholder: "card-placeholder"
 // 해당 클래스 하위의 텍스트 드래그를 막는다.
 $( ".column .card" ).disableSelection();
 });
+
+let names = JSON.parse("{{ name_js | escapejs }}")
+
+console.log (name);
 </script>
 
 </html>
