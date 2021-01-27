@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'css/main.css'%}">
+    <script>
+        //model 값 json 형식으로 저장 
+        let tests = [
+            {% for student in students.all %}
+                {
+                    name: "{{ student.name }}",
+                    major: "{{student.major}}"
+                },
+            {% endfor %}
+        ]
+        
+        console.log(tests);
+
+    </script>
+
     <title>MAIN</title>
 </head>
 <body>
@@ -34,7 +49,7 @@
     <form method="POST" action="#">
         <div class="card-list">
 
-            <div class="cards column">
+            <div class="cards column all">
                 <div class="no-move">
                     <button>전체</button>
                 </div>
@@ -43,27 +58,27 @@
                     <div class="student card-header">
                         <img src="{{student.profile.url}}" height="70px" width = "70px" class="student-img">
                         <p class="student-info">
-                            <span>{{student.name}}</span><br>
-                            <span>{{student.major}}</span>
+                            <span class="test1">{{student.name}}</span><br>
+                            <span class="test2">{{student.major}}</span>
                         </p>
                     </div>
                 </div>
                 {%endfor%}
             </div>
-            <div class="cards column">
+            <div class="cards column in">
                 <div class="no-move">
                     <button>출석</button>
                 </div>
             </div>
 
-            <div class="cards column ">
+            <div class="cards column late ">
                 <div class="no-move">
                     <button>지각</button>
                 </div>
             </div>
             
-            <div class="cards column ">
-                <div class="no-move">
+            <div class="cards column out">
+                <div class="no-move ">
                     <button>결석</button>
                 </div>
             </div>
@@ -99,10 +114,7 @@ placeholder: "card-placeholder"
 // 해당 클래스 하위의 텍스트 드래그를 막는다.
 $( ".column .card" ).disableSelection();
 });
-
-let names = JSON.parse("{{ name_js | escapejs }}")
-
-console.log (name);
 </script>
+
 
 </html>
