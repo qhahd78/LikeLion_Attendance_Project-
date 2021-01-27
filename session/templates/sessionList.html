@@ -17,14 +17,7 @@
 
             {% for session in sessions.all %}
             <p>
-                <span onclick="javascript:
-                    function a() {
-                        window.close(); 
-                        window.location.href('{% url 'home' %}');
-                    };
-                        
-                    return a();" 
-                    class="session-date">{{session.session_date|date:'Y-m-d'}}</span> 
+                <span class="session-date">{{session.session_date|date:'Y-m-d'}}</span> 
                 <span onclick="javascript:
                 function a() {
                     window.close(); 

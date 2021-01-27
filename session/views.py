@@ -20,6 +20,6 @@ def createsession (request) :
 
 @login_required(login_url='login')
 def sessionlist (request) :
-    Sessions = Session_form.objects 
+    Sessions = Session_form.objects.order_by('-session_date')
 
     return render(request, 'sessionList.html', {'sessions': Sessions } )
