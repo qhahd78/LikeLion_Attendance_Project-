@@ -12,8 +12,8 @@
         let tests = [
             {% for student in students.all %}
                 {
-                    name: "{{ student.name }}",
-                    major: "{{student.major}}"
+                    "name" : "{{ student.name }}",
+                    "major" : "{{student.major}}"
                 },
             {% endfor %}
         ]
