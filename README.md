@@ -1,4 +1,4 @@
-# 멋쟁이 사자처럼 출석부 시스템 만들기 Toy Project 
+# 멋쟁이 사자처럼 출석부 Toy Project 
 
 ### Front : HTML/CSS/JavaScript, Jquery 
 ### Back : Django 
